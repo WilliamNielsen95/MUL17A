@@ -1,0 +1,90 @@
+@charset "utf-8";
+ @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans');
+/* Desktop Styles */
+body {
+    background: #212121;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-family: 'Bree Serif', serif;
+    font-size: 60px;
+    margin-top: 100px;
+}
+footer {
+    padding: 20px 0;
+    font-size: larger;
+}
+/* Navigation Main Styles */
+nav {
+    background-color: #AA898A;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    display: inline-block;
+}
+nav a {
+    display: block;
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 14px 20px;
+}
+nav a:hover {
+    background-color: #212121;
+}
+/* The dropdown menu styles*/
+/* Hide Dropdowns by default and assigning position absolute */
+nav ul ul {
+    display: none;
+    position: absolute;
+}
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+    display: inherit;
+    background-color: #AA898A;
+    width: 150px;
+}
+.mystyle {
+    display:block;
+}
+button {
+    display: none;
+}
+
+/* Responsive Styles with CSS media query */
+@media all and (max-width : 768px) {
+h1 {
+    font-size: large;
+    margin-top: 0px;
+    text-align: center;
+}
+footer {
+    display: none;
+}
+    button {
+    display: block;
+}
+nav {
+    display: none;
+}
+nav ul li {
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+/* Dropdown items */
+nav ul ul {
+    position: static;
+}
+nav ul li:hover > ul {
+    width: 100%;
+}
+/* end media query */
+}
