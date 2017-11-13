@@ -5,6 +5,8 @@
 <title>How jQuery works</title>
 <!-- loading jQuery from server -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- loading jQuery plugin (https://github.com/flesler/jquery.scrollTo) -->
+<script type="text/javascript" src="scripts/jquery.scrollTo.min.js"></script>
 <!-- Embedded JS -->
 <script type="text/javascript">
     // the famous document.ready function, takes an anonymous function as argument
@@ -13,6 +15,16 @@
         
         $("#jsterror").click(myFunction);
         
+        // implementing the scrollTo plugin
+        
+        $("#stickynav a").click(function(e){
+            e.preventDefault();
+            $(window).scrollTo(this.hash, 1000);
+            
+        });
+        
+        
+    // -> end document.ready   
     });
     
     // a custom function
