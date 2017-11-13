@@ -3,12 +3,19 @@
 <head>
 <meta charset="utf-8">
 <title>How jQuery works</title>
-
-</head>
-
-<body>
-    <button id="jsterror">Take me to jQuery!</button>
-    <script type="text/javascript">
+<!-- loading jQuery from server -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- Embedded JS -->
+<script type="text/javascript">
+    // the famous document.ready function, takes an anonymous function as argument
+    $(document).ready(function(){
+        // all JS code goes here:
+        
+        $("#jsterror").click(myFunction);
+        
+    });
+    
+    // a custom function
     function myFunction(){
     // a statement, closed with semicolon
     // standard function alert, taking arguments type string (plain text)
@@ -16,7 +23,12 @@
     // opening a new page in a tab
     window.open("https://jquery.com", "_blank");
     }
-    document.getElementById("jsterror").addEventListener("click", myFunction);
+    // classic JS:
+    //document.getElementById("jsterror").addEventListener("click", myFunction);
 </script>
+</head>
+
+<body>
+    <button id="jsterror">Take me to jQuery!</button>
 </body>
 </html>
