@@ -10,6 +10,8 @@
 <script type="text/javascript" src="scripts/jquery.scrollTo.min.js"></script>
 <!-- loading jQuery fartscroll plugin -->
 <script src="http://code.onion.com/fartscroll.js"></script>
+<!-- loading sdk slider plugin -->
+<script src="src/skdslider.min.js"></script>
 <!-- Embedded JS -->
 <script type="text/javascript">
     // the famous document.ready function, takes an anonymous function as argument
@@ -27,6 +29,17 @@
         });
         
         //fartscroll();
+        
+        // implemeting the slideshow plugin
+        $('#myslides').skdslider({
+            'delay': 5000, // Delay duration between two slides in micro seconds. 
+            'fadeSpeed': 2000, // Fading Speed in micro seconds.
+            'showNav': true, // It will show/hide navigation icon.
+            'numericNav': false, // If true, navigation will be numeric
+            'showNextPrev': true,
+            'showPlayButton': true
+        });
+
     // -> end document.ready   
     });
     
@@ -41,24 +54,53 @@
     // classic JS:
     //document.getElementById("jsterror").addEventListener("click", myFunction);
 </script>
+
+<!-- loading sdk slider gallery styles -->
+<link href="src/skdslider.css" rel="stylesheet" type="text/css">
 <link href="styles/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <!-- navigation bar -->
-    <nav id="stickynav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <button id="jsterror">Take me to jQuery!</button>
-    </nav>
+<!-- navigation bar -->
+<nav id="stickynav"> <a href="#home">Home</a> <a href="#about">About</a> <a href="#projects">Projects</a> <a href="#contact">Contact</a>
+  <button id="jsterror">Take me to jQuery!</button>
+</nav>
 <section id="home">
-    <h1>A brilliant one pager!</h1>
-    <h2>My splendid portfolio</h2> 
+<!-- The slideshow -->
+  <div id="myslides" class="skdslider">
+    <ul>
+      <li> <img src="images/banner_1.jpg" />
+        <div class="slide-desc">
+          <h2><a href="https://www.jqueryscript.net/slider/">Slider</a> Title 1</h2>
+          <p>Description 1.</p>
+        </div>
+      </li>
+      <li><img src="images/banner_2.jpg" />
+        <div class="slide-desc">
+          <h2>Slider Title 2</h2>
+          <p>Description 2.</p>
+        </div>
+      </li>
+      <li><img src="images/banner_3.jpg" />
+        <div class="slide-desc">
+          <h2>Slider Title 2</h2>
+          <p>Description 2.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- slideshow end --> 
+  <h1>A brilliant one pager!</h1>
+  <h2>My splendid portfolio</h2>
 </section>
-<section id="about"><h2>About me (the most important person in my life)!</h2></section>
-<section id="projects"><h2>My super duper projects</h2></section>
-<section id="contact"><h2>Contact me ASAP!</h2></section>
+<section id="about">
+  <h2>About me (the most important person in my life)!</h2>
+</section>
+<section id="projects">
+  <h2>My super duper projects</h2>
+</section>
+<section id="contact">
+  <h2>Contact me ASAP!</h2>
+</section>
 </body>
 </html>
